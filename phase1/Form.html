@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Form</title>
+    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/en/thumb/4/47/FC_Barcelona_%28crest%29.svg/1200px-FC_Barcelona_%28crest%29.svg.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+   nav{
+   
+   text-align:center;
+  
+  padding-top: 10px;
+  padding-right: 15px;
+  padding-left: 15px;
+   
+   
+   }
+   nav a{
+       height: 30%;
+       width: 60%;
+       
+   margin: 1.5rem;
+       
+   
+   
+   }
+   
+     #navbar{
+       align-items: center;
+       background-color: #23224cef;
+       padding: 35px 70px;
+       text-align: center;
+     
+       border-radius: 10px;
+       font-family: fcb-regular,Arial,Helvetica Neue,Helvetica,sans-serif;
+   }
+   #navbar a{
+       color: white;
+       text-decoration: none;
+       padding: 10px 15px;
+   }
+   #navbar a:hover{
+      background-color: #a50044;
+      border-radius: 5px;
+   }
+   
+   body{
+   background-color: #181733;
+   
+   
+   }
+   
+   h4{
+    color: white;
+   }
+   
+   span{
+    color: red;
+    font-family: 'Courier New', Courier, monospace;
+   }
+   </style> 
+
+   </head>
+   <body>
+   <nav>
+   <div id="navbar">
+       <div class="logo">
+           <img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/47/FC_Barcelona_%28crest%29.svg/1200px-FC_Barcelona_%28crest%29.svg.png" alt="FC logo" style="height: 70px; width: 70px;float: left;transform: translateY(-24px);">
+   
+       </div>
+</style>
+    <nav>
+        
+        <a href="index.html"> Home  </a> 
+        <a href="about.html"> About  </a> 
+        <a href="Courses.html"> Courses  </a> 
+        <a href="Contact Us.html"> Contact  </a> 
+        <a href="Success Stories.html"> Success Stories  </a> 
+        <a href="Resource Library.html"> Resource Library  </a> 
+        <a href="Form.html"> Form </a>
+        </div>
+        </nav>
+
+        <script>
+            function CalcP(){
+            var Name=document.getElementById("Name").value;
+            var age=document.getElementById("Age").value;
+            var Hight=document.getElementById("High").value;
+            var Weight=document.getElementById("Weight").value;
+            
+            
+            var Radios=document.getElementsByName("r1");
+            for(var i=0;i<Radios.length;i++){
+                if(Radios[i].checked){
+                    if(Radios[i].value=="GK"){
+                        Position="GoalKeeper";
+                    }
+                    else if(Radios[i].value=="CB"){
+                        Position="Defender";
+                    }
+                    else if(Radios[i].value=="CM"){
+                        Position="Midfielder";
+                    }
+                    else if(Radios[i].value=="ST"){
+                        Position="Striker";
+                    }
+                    else{
+                        document.getElementById("sp5").innerHTML="Choose a Position";
+                    }
+                   
+                }
+            }
+            
+            temp="";
+                var checks=document.getElementsByName("c1");
+                for (var i=0;i<checks.length;i++){
+                    if(checks[i].checked){
+                        if(checks[i].value=="R"){
+                            temp+="R";
+                        }
+                        else if(checks[i].value=="L"){
+                            temp+="L";
+                        }
+
+                    }
+                    if(temp=="R"){
+                        Leg="Right";
+                    }
+                    else if(temp=="L"){
+                        Leg="Left";
+                    }
+                    else if(temp=="RL"){
+                        Leg="Right and Left";
+                    }
+                }
+
+
+
+                
+            }
+
+            function Valids(){
+                var Name=document.getElementById("Name").value;
+            var age=document.getElementById("Age").value;
+            var Hight=document.getElementById("High").value;
+            var Weight=document.getElementById("Weight").value;
+            var Radios=document.getElementsByName("r1");
+            var tt=0;
+            for(var i=0;i<Radios.length;i++){
+                if(Radios[i].checked){
+                  tt+=1;
+                    if(Radios[i].value=="GK"){
+                        Position="GoalKeeper";
+                        
+                    }
+                    else if(Radios[i].value=="CB"){
+                        Position="Defender";
+                    }
+                    else if(Radios[i].value=="CM"){
+                        Position="Midfielder";
+                    }
+                    else if(Radios[i].value=="ST"){
+                        Position="Striker";
+                    }
+                   
+                }
+    
+            }
+            var test=0;
+            var checks=document.getElementsByName("c1");
+            for (var i=0;i<checks.length;i++){
+                    if(checks[i].checked){
+                       test+=1;
+                        if(checks[i].value=="R"){
+                            temp+="R";
+                            
+                        }
+                        else if(checks[i].value=="L"){
+                            temp+="L";
+                            
+                        }
+                        
+                    }
+
+
+                    if(temp=="R"){
+                        Leg="Right";
+                        
+                    }
+                    else if(temp=="L"){
+                        Leg="Left";
+                        
+                    }
+                    else if(temp=="RL"){
+                        Leg="Right and Left";
+                        
+                    }
+                
+                }
+                if(Name==0){
+                    document.getElementById("sp1").innerHTML="Please Enter Your Name!";
+                    return false;
+                }
+          else  if(age<0){
+                document.getElementById("sp1").innerHTML="";
+                document.getElementById("sp2").innerHTML="Please Enter a Valid Age!"
+                return false;
+            }
+            else if(age==0){
+                document.getElementById("sp1").innerHTML="";
+                document.getElementById("sp2").innerHTML="Please Enter Your Age!";
+                
+                return false;
+            }           
+
+           else if(Hight==0){
+            document.getElementById("sp1").innerHTML="";
+                document.getElementById("sp3").innerHTML="Please Enter Your Highet!";
+                document.getElementById("sp2").innerHTML=""
+                return false;
+            }
+            else if(Hight<30){
+                document.getElementById("sp1").innerHTML="";
+                document.getElementById("sp2").innerHTML="";
+                document.getElementById("sp3").innerHTML="Please Enter a Valid Highet!";
+                return false;
+            }
+            else if(Weight==0){
+                document.getElementById("sp1").innerHTML="";
+                document.getElementById("sp2").innerHTML="";
+                document.getElementById("sp3").innerHTML="";
+                document.getElementById("sp4").innerHTML="Please Enter Your Weighet!";
+                return false;
+            }
+            else if(Weight<30){
+                document.getElementById("sp1").innerHTML="";
+                document.getElementById("sp2").innerHTML="";
+                document.getElementById("sp3").innerHTML="";
+                document.getElementById("sp4").innerHTML="Please Enter a Valid Weighet!";
+                return false;
+            }
+            else if(tt==0){
+                document.getElementById("sp1").innerHTML="";
+                document.getElementById("sp2").innerHTML="";
+            document.getElementById("sp3").innerHTML="";
+            document.getElementById("sp4").innerHTML="";
+            document.getElementById("sp5").innerHTML="Please Choose a Position!";
+            return false;
+            }
+           else if(test=="0"){
+            document.getElementById("sp1").innerHTML="";
+            document.getElementById("sp2").innerHTML="";
+            document.getElementById("sp3").innerHTML="";
+            document.getElementById("sp4").innerHTML="";
+            document.getElementById("sp5").innerHTML="";
+            document.getElementById("sp6").innerHTML="Please Choose a fav leg!";
+            return false;
+           }
+            else{
+                document.getElementById("sp1").innerHTML="";
+                document.getElementById("sp2").innerHTML=""
+            document.getElementById("sp3").innerHTML="";
+            document.getElementById("sp4").innerHTML="";
+            document.getElementById("sp5").innerHTML="";
+            document.getElementById("sp6").innerHTML="";
+            var result="Name: "+Name+"\nAge: "+age+"\nHight: "+Hight+"\nWeight: "+Weight+"\nPosition: "+Position+"\nFav Leg: "+Leg+"\n\n";
+
+                if(Position=="Midfielder"){
+                    if(Weight>90){
+                        if(Leg=="Right and Left"){
+                            result+="You Are a Good Midfielder And Plays With Both Legs But You Need to Lose Some Weight";
+                        }
+                        else{
+                            result+="You Need to Lose Some Weight if You Want to be a Good Midfielder";
+                        }
+                    }
+                    else{
+                        if(Leg=="Right and Left"){
+                            result+="You are an Amazing Midfielder Plays With Both Legs and With a Good Weight";
+                        }
+                        else{
+                            result+="You are a Good Midfielder With Good Weight";
+                        }
+                    }
+                }
+
+                else if(Position=="Striker"){
+                    if(Weight>90){
+                        if(Hight<175){
+                            if(Leg=="Right and Left"){
+                                result+="We Suggest For You to Play in Midfield Becuase Your Hight and Weight Does not Help to Become a Striker But its Good That You Plays With Both Legs";
+                            }
+                            else{
+                                result+="We Suggest For You to Play in Midfield Becuase Your Hight and Weight Does not Help to Become a Striker";
+                            }
+                        }
+                        else{
+                            if(Leg=="Right and Left"){
+                                result+="You Are a Good Striker With a Good Hight But You Need to Lose Some Weight and its Amazing That You Plays With Both Legs";
+                            }
+                            else{
+                                result+="Your Hight Helps You To Become a Striker But You Need to Lose Some Weight";
+                            }
+                        }
+                    }
+                    else{
+                        if(Hight<175){
+                            if(Leg=="Right and Left"){
+                                result+="Your Are a Good Striker And Plays With Both Legs but Your Hight Does not Help";
+                            }
+                            else{
+                                result+="Your Weight is Good to Become a Striker But Your Hight Does not Help so We Suggest to You to Play in Midfield";
+                            }
+                        }
+                        else{
+                            if(Leg=="Right and Left"){
+                                result+="You Are an Amazing Striker With Good Weight and Hight, And Plays With Both Legs";
+                            }
+                            else{
+                                result+="You Are a Good Striker With Good Hight and Weight";
+                            }
+                        }
+                    }
+                }
+                else if(Position=="Defender"){
+                    if(Hight<175){
+                        if(Weight<75){
+                            result+="Your Hight and Weight Does Not Help to Become a Defender We Suggest To Play in MidField";
+                        }
+                        else{
+                            result+="Your Weight is Good But Your Hight Does Not Help to Become a Defender";
+                        }
+                    }
+                    else{
+                        if(Weight<75){
+                            result+="Your Hight is Good For a Defender But Your Weight Does not Help";
+                        }
+                        else{
+                            result+="You are a Good Defender With Good Hight And Weight";
+                        }
+                    }
+                }
+                else{
+                    if(Hight<175){
+                        if(Weight>95){
+                            result+="Your Hight and Weight Does Not Help to Become a GoalKeeper";
+                        }
+                        else{
+                            result+="Your Hight Does not Help to Become a GoalKeeper";
+                        }
+                    }
+                    else{
+                        if(Weight>95){
+                            result+="Your Hight is Perfect for a GoalKeeper But You Need to Lose Some Weight";
+                        }
+                        else{
+                            result+="You are an Amazing GoalKeeper With a Perfect Hight and Weight for a GoalKeeper";
+                        }
+                    }
+                }
+                
+                document.getElementById("t1").innerHTML=result;
+                return false;
+                
+                    
+                    
+                
+            }
+            
+            
+            }
+function ResetText(){
+    document.getElementById("t1").innerHTML="";
+    document.getElementById("sp1").innerHTML="";
+                document.getElementById("sp2").innerHTML=""
+            document.getElementById("sp3").innerHTML="";
+            document.getElementById("sp4").innerHTML="";
+            document.getElementById("sp5").innerHTML="";
+            document.getElementById("sp6").innerHTML="";
+}
+           </script>
+    <div class="container-fluid">
+        <form onsubmit="return Valids()">
+        <h4></h4>
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <h4>Name: <input type="text" id="Name"><span id="sp1"> </span></h4> 
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <h4> Age: <input type="number" id="Age"><span id="sp2"> </span></h4>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-9">
+                <h4> Hight (in Cmeters): <input type="number" id="High"><span id="sp3"> </span></h4>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-9">
+                <h4> Weight (in kilograms): <input type="number" id="Weight"><span id="sp4"> </span></h4>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-12">
+                <h4>Choose Your Position:</h4>
+                <h4><input type = "radio" name = "r1" value = "GK">Goalkeeper 
+                <input type = "radio" name = "r1" value = "CB">Defender 
+                <input type = "radio" name = "r1" value = "CM">Midfielder 
+                <input type = "radio" name = "r1" value = "ST">Striker <span id="sp5"> </span></h4>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-12">
+                <h4>What is Your Fav Leg: </h4>
+                <h4> <input type="checkbox" name="c1" value="R">Right
+                <input type="checkbox" name="c1" value="L">Left <span id="sp6"> </span></h4>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-12">
+                <textarea name="txt1" id="t1" rows="13" cols="25"></textarea><br>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <button type="submit" onclick="CalcP()" class="btn btn-danger">Submit Info</button>
+                <button type="reset" class="btn btn-primary" onclick="ResetText()">Reset Form</button>
+            </div>
+        </div>
+
+           
+
+        </form>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    </div>
+    </body>
+</html>
